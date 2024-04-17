@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style>
+            p{
+                font-family: verdana;
+                font-size: 12px;
+            }
+
+            button {
+                font-family: verdana;
+                font-size: 16px;
+            }
+
+            #spanNombreCompleto{
+                color: red;
+            }
+
+            #inputNombre {
+                color: blue;
+            }
+
+            .estiloTextBox {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 20px;
+                font-weight: 2px;
+                color: blueviolet;
+                text-align: right;
+            }
+        </style>
+    </head>
+        <body>
+            <h1>Hola <span id="spanNombreCompleto">Apellido, Nombre</span></h1>
+            <p> 
+                Ingresar Nombre: <input id="inputNombre">
+            </p>
+            <p>
+                Ingresar Apellido: <input class="estiloTextBox" id="inputApellido">
+            </p>
+            <button id="buttonPresionar" onclick="ButtonPresionarClick();">Presionar</button>
+
+            <script>
+                function ButtonPresionarClick(){
+                var textoNombre = document.getElementById("inputNombre").value;
+                var textoApellido = document.getElementById("inputApellido").value;
+
+                var componenteSpan= document.getElementById("spanNombreCompleto");
+                componenteSpan.innerText = textoApellido + ", " + textoNombre;
+                }
+            </script>
+        </body>
+</html>

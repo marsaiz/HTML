@@ -1,0 +1,49 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <p>
+            Numero 1: <input id="primerNumero" type="number">
+        </p>
+        <p>
+            Numero 2: <input id="segundoNumero" type="number">
+        </p>
+        <p>
+            Resultado: <input id="resultado" readonly>
+        </p>
+        <button id="sumar" onclick="Sumar();">Sumar</button>
+        <button id="restar" onclick="Restar();">Restar</button>
+        <button id="multiplicar" onclick="Sumar();">Multiplicar</button>
+        <button id="dividir" onclick="Dividir();">Dividir</button>
+        <script>
+            function Sumar(){
+                var primerNumero = document.getElementById("primerNumero").value;
+                var segundoNumero = document.getElementById("segundoNumero").value;
+            
+                var resultado = parseInt(primerNumero) + parseInt(segundoNumero);
+                document.getElementById("resultado").value = resultado;
+            }
+            function Restar(){
+                var primerNumero = document.getElementById("primerNumero").value;
+                var segundoNumero = document.getElementById("segundoNumero").value;
+            
+                var resultado = parseInt(primerNumero) - parseInt(segundoNumero);
+                document.getElementById("resultado").value = resultado;
+            }
+            function Multiplicar(){
+                var primerNumero = document.getElementById("primerNumero").value;
+                var segundoNumero = document.getElementById("segundoNumero").value;
+            
+                var resultado = parseInt(primerNumero) * parseInt(segundoNumero);
+                document.getElementById("resultado").value = resultado;
+            }
+            function Dividir(){
+                var primerNumero = document.getElementById("primerNumero").value;
+                var segundoNumero = document.getElementById("segundoNumero").value;
+            
+                var resultado = parseInt(primerNumero) / parseInt(segundoNumero);
+                document.getElementById("resultado").value = resultado;
+            }
+        </script>
+    </body>
+</html>
