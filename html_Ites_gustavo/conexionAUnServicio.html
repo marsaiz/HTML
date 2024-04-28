@@ -1,0 +1,42 @@
+<html>
+    <head>
+
+    </head>
+        <body>
+            <p>
+                La temperatura en <b> <span style="font-size: 18px; font-family: Arial;  "id ="ciudad"></span></b> es de 
+                <span style="color: orange; font-size: 18px; font-family: Arial;" id="temperatura"></span>º    
+            </p>
+            Localidad<input type="text" id="inputCiudad"/>
+            <button onclick="Obtenertemperatura();">Mostrar Temperatura</button>
+            
+            <script>
+                function Obtenertemperatura(){
+                   var localidad = document.getElementById("inputCiudad").value;
+
+                var url = "https://api.weatherapi.com/v1/current.json?q=" + localidad + "&lang=es&key=%20%20%20%20%20%20%20%20%20%20%20%20%20%20    f32fb31825ba49569b6231259242604";
+
+                fetch(url)
+                .then( response => {
+                    if (response.ok)
+                    {
+                        const instnaciObjeto = response.json();
+
+                        return instnaciObjeto;
+                    }
+                })
+                .then( data => {
+                    var ciudad = data.location.name;
+                    var temperatura = data.current.temp_c;
+
+                    document.getElementById("ciudad").innerText = ciudad;
+
+                    document.getElementById("temperatura").innerText = temperatura;
+                })
+                .catch( error => {
+                    alert(error);
+                });
+                }
+            </script>
+        </body>
+</html>
